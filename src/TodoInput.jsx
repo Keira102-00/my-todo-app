@@ -1,13 +1,13 @@
 // 输入框组件，输入内容后点击按钮将任务传给父组件
 import { useState } from 'react';
 
-export default function TodoInput({ onAdd }) {
+export default function TodoInput({ addTodo }) {
   const [text, setText] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (text.trim() !== '') {
-      onAdd(text);
+      addTodo(text);
       setText('');
     }
   };
