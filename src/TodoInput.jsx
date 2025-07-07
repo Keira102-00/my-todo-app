@@ -1,29 +1,29 @@
-// 输入框组件，输入内容后点击按钮将任务传给父组件
-import { useState } from 'react';
+// src/TodoInput.jsx
+// 任务输入组件，只负责输入和添加任务
+import React from 'react';
 
-export default function TodoInput({ addTodo }) {
-  const [text, setText] = useState('');
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (text.trim() !== '') {
-      addTodo(text);
-      setText('');
-    }
-  };
-
+/**
+ * @param {string} value - 输入框内容
+ * @param {function} onChange - 输入框内容变化时的回调
+ * @param {function} onAdd - 点击添加按钮或回车时的回调
+ */
+export default function TodoInput({ value, onChange, onAdd }) {
   return (
-    <form onSubmit={handleSubmit} className="flex gap-2 mt-4">
+    <div className="flex gap-2 mb-6 justify-center">
       <input
         type="text"
-        value={text}
-        onChange={(e) => setText(e.target.value)}
-        placeholder="输入你的待办事项"
-        className="border p-2 flex-1 rounded"
+        className="border border-gray-300 rounded-lg px-3 py-2 flex-1 max-w-xs text-base focus:outline-none focus:ring-2 focus:ring-blue-200"
+        placeholder="输入任务内容"
+        value={value}
+        onChange={e => onChange(e.target.value)}
+        onKeyDown={e => { if (e.key === 'Enter') onAdd(); }}
       />
-      <button type="submit" className="bg-blue-500 text-white px-4 rounded">
-        添加
+      <button
+        className="bg-blue-500 text-white px-5 py-2 rounded-lg text-base hover:bg-blue-600 transition"
+        onClick={onAdd}
+      >
+        添加任务
       </button>
-    </form>
+    </div>
   );
 }

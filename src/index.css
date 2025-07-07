@@ -1,72 +1,85 @@
+/* src/index.css */
+/* 全局样式文件 - 定义应用的基础样式和 Tailwind CSS 配置 */
+
+/* CSS 根变量定义 - 设置全局字体和颜色方案 */
 :root {
+  /* 字体设置：系统字体栈，确保跨平台一致性 */
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  line-height: 1.5; /* 行高设置 */
+  font-weight: 400; /* 字体粗细 */
 
+  /* 颜色方案：支持明暗主题切换 */
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: rgba(255, 255, 255, 0.87); /* 主要文字颜色：白色半透明 */
+  background-color: #242424; /* 背景颜色：深灰色 */
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* 字体渲染优化 */
+  font-synthesis: none; /* 禁用字体合成 */
+  text-rendering: optimizeLegibility; /* 优化文字可读性 */
+  -webkit-font-smoothing: antialiased; /* WebKit 字体平滑 */
+  -moz-osx-font-smoothing: grayscale; /* Firefox 字体平滑 */
 }
 
+/* 链接样式 */
 a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+  font-weight: 500; /* 字体粗细 */
+  color: #646cff; /* 链接颜色：蓝紫色 */
+  text-decoration: inherit; /* 继承父元素的文字装饰 */
 }
 a:hover {
-  color: #535bf2;
+  color: #535bf2; /* 悬停时的颜色变化 */
 }
 
+/* 页面主体样式 */
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  margin: 0; /* 移除默认边距 */
+  display: flex; /* 使用 flexbox 布局 */
+  place-items: center; /* 居中对齐内容 */
+  min-width: 320px; /* 最小宽度 */
+  min-height: 100vh; /* 最小高度：全屏高度 */
 }
 
+/* 一级标题样式 */
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: 3.2em; /* 字体大小 */
+  line-height: 1.1; /* 行高 */
 }
 
+/* 按钮样式 */
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
+  border-radius: 8px; /* 圆角边框 */
+  border: 1px solid transparent; /* 透明边框 */
+  padding: 0.6em 1.2em; /* 内边距 */
+  font-size: 1em; /* 字体大小 */
+  font-weight: 500; /* 字体粗细 */
+  font-family: inherit; /* 继承父元素字体 */
+  background-color: #1a1a1a; /* 背景颜色：深色 */
+  cursor: pointer; /* 鼠标指针样式 */
+  transition: border-color 0.25s; /* 边框颜色过渡动画 */
 }
 button:hover {
-  border-color: #646cff;
+  border-color: #646cff; /* 悬停时边框颜色 */
 }
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: 4px auto -webkit-focus-ring-color; /* 焦点时的轮廓样式 */
 }
 
+/* 明色主题媒体查询 - 当用户系统偏好明色主题时应用 */
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    color: #213547; /* 明色主题下的文字颜色 */
+    background-color: #ffffff; /* 明色主题下的背景颜色 */
   }
   a:hover {
-    color: #747bff;
+    color: #747bff; /* 明色主题下链接悬停颜色 */
   }
   button {
-    background-color: #f9f9f9;
+    background-color: #f9f9f9; /* 明色主题下按钮背景颜色 */
   }
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Tailwind CSS 指令 - 导入 Tailwind 的基础样式、组件和工具类 */
+@tailwind base;    /* 导入 Tailwind 的基础样式重置 */
+@tailwind components; /* 导入 Tailwind 的组件样式 */
+@tailwind utilities;  /* 导入 Tailwind 的工具类 */

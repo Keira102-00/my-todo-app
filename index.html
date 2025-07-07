@@ -1,13 +1,30 @@
 <!doctype html>
+<!-- index.html -->
+<!-- 应用的 HTML 入口文件 - 定义页面的基本结构和元数据 -->
+
 <html lang="en">
   <head>
+    <!-- 字符编码设置 -->
     <meta charset="UTF-8" />
+    
+    <!-- 网站图标 -->
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    
+    <!-- 视口设置：确保响应式设计在移动设备上正常工作 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- 页面标题 -->
     <title>Vite + React</title>
   </head>
+  
   <body>
+    <!-- React 应用的根容器 -->
+    <!-- React 会将所有组件渲染到这个 div 中 -->
     <div id="root"></div>
+    
+    <!-- 主 JavaScript 文件 -->
+    <!-- type="module" 表示使用 ES 模块语法 -->
+    <!-- src="/src/main.jsx" 指向 React 应用的入口文件 -->
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
